@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_theme"
+        android:gravity="center"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="?android:textColorPrimary"
+        android:drawableStart="@drawable/ic_weather_vector"
+        android:drawableTint="@color/ic_weather"
+        android:drawablePadding="15dp"
+        />
+
+    <Button
+        android:id="@+id/button_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="normal"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/button_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/text_label"
+        app:layout_constraintStart_toEndOf="@id/button_normal"
+        app:layout_constraintEnd_toStartOf="@id/button_system"
+        android:text="dark"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/button_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/text_label"
+        app:layout_constraintStart_toEndOf="@id/button_dark"
+        app:layout_constraintEnd_toStartOf="@id/button_buttery"
+        android:text="system"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/button_buttery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/text_label"
+        app:layout_constraintStart_toEndOf="@id/button_system"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="buttery"
+        android:gravity="center"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
