@@ -1,11 +1,10 @@
 package com.saito.takumi.darkthemesample
 
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,35 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.d("saito", "onCreate")
-
-        findViewById<Button>(R.id.button_normal).setOnClickListener {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//            recreate() 1.1.0から不要
-        }
-        findViewById<Button>(R.id.button_dark).setOnClickListener {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            //            recreate() 1.1.0から不要
-        }
-        findViewById<Button>(R.id.button_system).setOnClickListener {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            //            recreate() 1.1.0から不要
-        }
-        findViewById<Button>(R.id.button_buttery).setOnClickListener {
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO)
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY)
-            //            recreate() 1.1.0から不要
-        }
+        val bnv = findViewById<BottomNavigationView>(R.id.bnv)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        bnv.setupWithNavController(navController)
     }
 
-    override fun onDestroy() {
-        Log.d("saito", "onDestroy")
-        super.onDestroy()
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-
-        Log.d("saito", "onConfigurationChanged")
-    }
 }
