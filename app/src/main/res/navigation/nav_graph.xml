@@ -12,11 +12,11 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_webFragment"
-            app:destination="@id/webFragment" />
+            app:destination="@id/darkThemeWebFragment" />
     </fragment>
     <fragment
-        android:id="@+id/webFragment"
-        android:name="com.saito.takumi.darkthemesample.WebFragment"
+        android:id="@+id/darkThemeWebFragment"
+        android:name="com.saito.takumi.darkthemesample.DarkThemeWebFragment"
         android:label="fragment_web"
         tools:layout="@layout/fragment_web" />
 </navigation>

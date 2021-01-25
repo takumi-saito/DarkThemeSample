@@ -7,7 +7,7 @@
         />
 
     <item
-        android:id="@+id/webFragment"
+        android:id="@+id/darkThemeWebFragment"
         android:icon="@mipmap/ic_launcher"
         android:title="web"
         />
