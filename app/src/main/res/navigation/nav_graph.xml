@@ -13,10 +13,19 @@
         <action
             android:id="@+id/action_mainFragment_to_webFragment"
             app:destination="@id/darkThemeWebFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_jsDarkThemeWebFragment"
+            app:destination="@id/jsDarkThemeWebFragment" />
     </fragment>
     <fragment
         android:id="@+id/darkThemeWebFragment"
         android:name="com.saito.takumi.darkthemesample.DarkThemeWebFragment"
-        android:label="fragment_web"
-        tools:layout="@layout/fragment_web" />
+        android:label="fragment_dark_theme_web"
+        tools:layout="@layout/fragment_dark_theme_web" />
+    <fragment
+        android:id="@+id/jsDarkThemeWebFragment"
+        android:name="com.saito.takumi.darkthemesample.JsDarkThemeWebFragment"
+        android:label="JsDarkThemeWebFragment"
+        tools:layout="@layout/fragment_js_dark_theme_web"
+        />
 </navigation>
